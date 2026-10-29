@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preventivo Infissi in PVC e Alluminio | Serramenti, Tapparelle e Zanzariere</title>
+  <style>
+    :root {
+      --primary: #1e40af;
+      --primary-hover: #1d4ed8;
+      --whatsapp: #25d366;
+      --whatsapp-hover: #1ebd5a;
+      --slate-800: #1e293b;
+      --slate-600: #475569;
+      --slate-100: #f1f5f9;
+      --slate-200: #e2e8f0;
+      --border: #cbd5e1;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    body {
+      background: #f8fafc;
+      color: var(--slate-800);
+      padding: 20px 12px;
+      line-height: 1.5;
+    }
+    .wrapper {
+      max-width: 680px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+      overflow: hidden;
+    }
+    .header-banner {
+      background: linear-gradient(135deg, #1e3a8a, #2563eb);
+      color: #ffffff;
+      padding: 26px 20px;
+      text-align: center;
+    }
+    .header-badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+    .header-banner h1 {
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 6px;
+      line-height: 1.2;
+    }
+    .header-banner p {
+      font-size: 14px;
+      color: #e0e7ff;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .main-body {
+      padding: 22px 18px;
+    }
+
+    /* Tabs */
+    .tab-nav {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+      background: var(--slate-100);
+      padding: 5px;
+      border-radius: 10px;
+      margin-bottom: 22px;
+    }
+    .tab-btn {
+      padding: 10px 4px;
+      border: none;
+      background: transparent;
+      border-radius: 7px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--slate-600);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-align: center;
+    }
+    .tab-btn.active {
+      background: #ffffff;
+      color: var(--primary);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    }
+
+    .tab-pane {
+      display: none;
+    }
+    .tab-pane.active {
+      display: block;
+    }
+
+    /* Form Grids */
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .grid-full {
+      grid-column: span 2;
+    }
+    .field-group {
+      display: flex;
+      flex-direction: column;
+    }
+    .field-group label {
+      font-size: 12px;
+      font-weight: 700;
+      color: #334155;
+      margin-bottom: 5px;
+    }
+    .field-group select,
+    .field-group input[type="text"],
+    .field-group input[type="tel"],
+    .field-group input[type="number"],
+    .field-group textarea {
+      height: 42px;
+      padding: 0 12px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 14px;
+      background: #ffffff;
+      color: #0f172a;
+      outline: none;
+      transition: border 0.2s;
+      width: 100%;
+    }
+    .field-group textarea {
+      height: 70px;
+      padding: 8px 12px;
+      resize: vertical;
+    }
+    .field-group select:focus,
+    .field-group input:focus,
+    .field-group textarea:focus {
+      border-color: var(--primary);
+    }
+
+    /* Section Boxes */
+    .feature-box {
+      background: #f8fafc;
+      border: 1px dashed var(--border);
+      border-radius: 10px;
+      padding: 14px;
+      margin-top: 14px;
+      margin-bottom: 14px;
+    }
+    .feature-title {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #475569;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    /* Price Result Box */
+    .quote-box {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-left: 6px solid #16a34a;
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin: 18px 0;
+    }
+    .quote-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .quote-label {
+      font-size: 14px;
+      font-weight: 700;
+      color: #166534;
+    }
+    .quote-price {
+      font-size: 26px;
+      font-weight: 800;
+      color: #15803d;
+    }
+    .quote-sub {
+      font-size: 11px;
+      color: #4b5563;
+      margin-top: 4px;
+      display: block;
+    }
+
+    /* Lead Contact Form */
+    .contact-box {
+      border-top: 2px dashed var(--slate-200);
+      padding-top: 18px;
+      margin-top: 18px;
+    }
+    .contact-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 4px;
+    }
+    .contact-desc {
+      font-size: 12px;
+      color: var(--slate-600);
+      margin-bottom: 14px;
+    }
+
+    .gdpr-box {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      background: var(--slate-100);
+      padding: 10px 12px;
+      border-radius: 8px;
+      margin: 14px 0;
+    }
+    .gdpr-box input {
+      margin-top: 3px;
+      accent-color: var(--primary);
+    }
+    .gdpr-box label {
+      font-size: 11px;
+      color: var(--slate-600);
+      line-height: 1.35;
+      cursor: pointer;
+    }
+
+    .btn-send-whatsapp {
+      width: 100%;
+      height: 50px;
+      background: var(--whatsapp);
+      color: #ffffff;
+      border: none;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: background 0.2s ease, transform 0.1s ease;
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+    }
+    .btn-send-whatsapp:hover {
+      background: var(--whatsapp-hover);
+      transform: translateY(-1px);
+    }
+    .btn-send-whatsapp svg {
+      width: 22px;
+      height: 22px;
+      fill: currentColor;
+    }
+
+    .alert-msg {
+      display: none;
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      color: #dc2626;
+      font-size: 12px;
+      font-weight: 700;
+      text-align: center;
+      padding: 10px;
+      border-radius: 8px;
+      margin-bottom: 12px;
+    }
+
+    .trust-badges {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-top: 18px;
+      text-align: center;
+    }
+    .trust-item {
+      background: #ffffff;
+      border: 1px solid var(--slate-200);
+      border-radius: 8px;
+      padding: 10px 6px;
+    }
+    .trust-item strong {
+      display: block;
+      font-size: 12px;
+      color: #0f172a;
+    }
+    .trust-item span {
+      font-size: 10px;
+      color: var(--slate-600);
+    }
+
+    @media (max-width: 520px) {
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+      .grid-full {
+        grid-column: span 1;
+      }
+      .tab-btn {
+        font-size: 11px;
+      }
+      .trust-badges {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="wrapper">
+  <!-- Banner Top -->
+  <div class="header-banner">
+    <span class="header-badge">Preventivatore Online Rapido</span>
+    <h1>Infissi, Tapparelle e Zanzariere</h1>
+    <p>Calcola il costo orientativo in 30 secondi e richiedi il preventivo ufficiale su WhatsApp.</p>
+  </div>
+
+  <div class="main-body">
+    <!-- Category Tabs -->
+    <div class="tab-nav">
+      <button type="button" class="tab-btn active" id="tab-btn-infissi" onclick="setCategory('infissi')">
+        🪟 Infissi (PVC/ALU)
+      </button>
+      <button type="button" class="tab-btn" id="tab-btn-tapparelle" onclick="setCategory('tapparelle')">
+        🚪 Tapparelle
+      </button>
+      <button type="button" class="tab-btn" id="tab-btn-zanzariere" onclick="setCategory('zanzariere')">
+        🦟 Zanzariere
+      </button>
+    </div>
+
+    <!-- 1. CATEGORIA INFISSI (Default: 1 Finestra, 0 Balconi) -->
+    <div class="tab-pane active" id="pane-infissi">
+      <div class="form-grid">
+        <div class="field-group">
+          <label>Materiale Telaio</label>
+          <select id="inf-mat" onchange="calcEstimate()">
+            <option value="pvc" selected>PVC Alta Efficienza (7 camere)</option>
+            <option value="alu">Alluminio a Taglio Termico</option>
+            <option value="pvc-alu">PVC con Guscio Esterno Alluminio</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label>Tipologia Vetrata</label>
+          <select id="inf-glass" onchange="calcEstimate()">
+            <option value="doppio" selected>Doppio Vetro Basso Emissivo</option>
+            <option value="triplo">Triplo Vetro (Massimo Isolamento)</option>
+            <option value="acustico">Vetro Fonoisolante / Acustico</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label>Numero Finestre Standard</label>
+          <input type="number" id="inf-qty-win" value="1" min="0" max="30" oninput="calcEstimate()">
+        </div>
+        <div class="field-group">
+          <label>Numero Porte-Finestre / Balconi</label>
+          <input type="number" id="inf-qty-door" value="0" min="0" max="30" oninput="calcEstimate()">
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. CATEGORIA TAPPARELLE (Default: 1 Tapparella) -->
+    <div class="tab-pane" id="pane-tapparelle">
+      <div class="form-grid">
+        <div class="field-group">
+          <label>Profilo Tapparella Alluminio</label>
+          <select id="tap-mat" onchange="calcEstimate()">
+            <option value="alu-std" selected>Alluminio Coibentato Standard (Densità media)</option>
+            <option value="alu-hd">Alluminio Coibentato Alta Densità (Massima robustezza)</option>
+            <option value="alu-aria">Alluminio Microforato / Frangisole (Più luce e aria)</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label>Sistema di Movimentazione</label>
+          <select id="tap-motor" onchange="calcEstimate()">
+            <option value="manuale">Manuale a Cinghia / Rullo classico</option>
+            <option value="motore" selected>Motorizzato con Interruttore a parete</option>
+            <option value="smart">Motorizzato Smart Wi-Fi / Telecomando</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label>Numero Tapparelle</label>
+          <input type="number" id="tap-qty" value="1" min="1" max="50" oninput="calcEstimate()">
+        </div>
+        <div class="field-group">
+          <label>Include Cassonetto Coibentato?</label>
+          <select id="tap-box" onchange="calcEstimate()">
+            <option value="no" selected>No, solo tapparelle</option>
+            <option value="si">Sì, isolamento termico cassonetto</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. CATEGORIA ZANZARIERE (Default: 1 Finestra, 0 Balconi) -->
+    <div class="tab-pane" id="pane-zanzariere">
+      <div class="form-grid">
+        <div class="field-group">
+          <label>Modello Zanzariera</label>
+          <select id="zanz-model" onchange="calcEstimate()">
+            <option value="plissettata" selected>Plissettata a guida bassa (Passaggio zero)</option>
+            <option value="rullo">A Rullo con Frizione rallentatore</option>
+            <option value="pannello">A Pannello Fisso / Magnetica</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label>Colore Rete / Struttura</label>
+          <select id="zanz-color" onchange="calcEstimate()">
+            <option value="std" selected>Standard (Grigio chiaro / Bianco)</option>
+            <option value="antracite">Antracite RAL 7016 / Marrone</option>
+            <option value="legno">Effetto Legno Pregiato</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label>Pezzi per Finestra</label>
+          <input type="number" id="zanz-qty-win" value="1" min="0" max="30" oninput="calcEstimate()">
+        </div>
+        <div class="field-group">
+          <label>Pezzi per Balcone / Porta-finestra</label>
+          <input type="number" id="zanz-qty-door" value="0" min="0" max="30" oninput="calcEstimate()">
+        </div>
+      </div>
+    </div>
+
+    <!-- Extra: Posa in opera (Default: Solo Fornitura) -->
+    <div class="feature-box">
+      <span class="feature-title">Servizio Richiesto:</span>
+      <div class="form-grid" style="margin-bottom:0;">
+        <div class="field-group">
+          <label>Modalità di Fornitura / Posa</label>
+          <select id="srv-install" onchange="calcEstimate()">
+            <option value="solo_fornitura" selected>Solo Fornitura (Senza Montaggio / Spedizione)</option>
+            <option value="posa_completa">Con Posa Qualificata + Smontaggio vecchio</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label>Zona / Provincia di Consegna</label>
+          <input type="text" id="cust-city" placeholder="Es: Milano, Roma, Torino, Verona...">
+        </div>
+      </div>
+    </div>
+
+    <!-- Box Stima Prezzo -->
+    <div class="quote-box">
+      <div class="quote-top">
+        <span class="quote-label" id="quote-title">Preventivo Indicativo:</span>
+        <span class="quote-price" id="quote-val">€ 320</span>
+      </div>
+      <span class="quote-sub" id="quote-sub">*Prezzo solo fornitura franco fabbrica / consegna. L'offerta definitiva viene formalizzata senza impegno.</span>
+    </div>
+
+    <!-- Lead Contact Form -->
+    <div class="contact-box">
+      <div class="contact-title">Richiedi l'Offerta Ufficiale</div>
+      <div class="contact-desc">Inserisci i tuoi dati: invieremo il riepilogo su WhatsApp con le specifiche tecniche e i tempi di produzione.</div>
+
+      <div class="form-grid">
+        <div class="field-group">
+          <label>Nome e Cognome *</label>
+          <input type="text" id="cust-name" placeholder="Es: Marco Rossi">
+        </div>
+        <div class="field-group">
+          <label>Numero di Telefono (WhatsApp) *</label>
+          <input type="tel" id="cust-phone" placeholder="Es: +39 340 1234567">
+        </div>
+        <div class="field-group grid-full">
+          <label>Dettagli o Misure Indicative (Facoltativo)</label>
+          <textarea id="cust-notes" placeholder="Es: Finestra 120x140 cm colore bianco, consegna piano terra..."></textarea>
+        </div>
+      </div>
+
+      <div class="gdpr-box">
+        <input type="checkbox" id="cust-gdpr">
+        <label for="cust-gdpr">
+          Acconsento al trattamento dei dati personali (Regolamento UE 2016/679 - GDPR) esclusivamente per la ricezione del preventivo personalizzato e contatto tecnico informativo.
+        </label>
+      </div>
+
+      <div id="alert-error" class="alert-msg"></div>
+
+      <button type="button" class="btn-send-whatsapp" onclick="sendLeadToWhatsApp()">
+        <svg viewBox="0 0 24 24">
+          <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.086s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/>
+        </svg>
+        Invia Richiesta su WhatsApp
+      </button>
+
+      <!-- Trust Badges -->
+      <div class="trust-badges">
+        <div class="trust-item">
+          <strong>Diretto da Fabbrica</strong>
+          <span>Miglior rapporto qualità/prezzo</span>
+        </div>
+        <div class="trust-item">
+          <strong>Garanzia fino a 10 Anni</strong>
+          <span>Alluminio & PVC certificati</span>
+        </div>
+        <div class="trust-item">
+          <strong>Spedizione Rapida</strong>
+          <span>Consegna sicura in cantiere</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  let currentCategory = 'infissi';
+  // NUMĂRUL ACTIV DE WHATSAPP PENTRU PRIMIREA LEAD-URILOR
+  const COMPANY_PHONE = "40785190155"; 
+
+  function setCategory(cat) {
+    currentCategory = cat;
+    ['infissi', 'tapparelle', 'zanzariere'].forEach(c => {
+      document.getElementById('tab-btn-' + c).className = (c === cat) ? 'tab-btn active' : 'tab-btn';
+      const pane = document.getElementById('pane-' + c);
+      if (pane) pane.className = (c === cat) ? 'tab-pane active' : 'tab-pane';
+    });
+    calcEstimate();
+  }
+
+  function calcEstimate() {
+    let total = 0;
+    const isInstall = document.getElementById('srv-install').value === 'posa_completa';
+    const quoteTitle = document.getElementById('quote-title');
+    const quoteVal = document.getElementById('quote-val');
+    const quoteSub = document.getElementById('quote-sub');
+
+    if (currentCategory === 'infissi') {
+      quoteTitle.innerText = "Stima Infissi (Finestre & Porte-Finestre):";
+      const mat = document.getElementById('inf-mat').value;
+      const glass = document.getElementById('inf-glass').value;
+      const qWin = parseInt(document.getElementById('inf-qty-win').value, 10) || 0;
+      const qDoor = parseInt(document.getElementById('inf-qty-door').value, 10) || 0;
+
+      let baseWin = 320;
+      let baseDoor = 540;
+
+      if (mat === 'alu') { baseWin *= 1.45; baseDoor *= 1.45; }
+      if (mat === 'pvc-alu') { baseWin *= 1.55; baseDoor *= 1.55; }
+
+      if (glass === 'triplo') { baseWin += 45; baseDoor += 80; }
+      if (glass === 'acustico') { baseWin += 60; baseDoor += 110; }
+
+      let installCost = isInstall ? (qWin * 60 + qDoor * 95) : 0;
+      total = Math.round((qWin * baseWin) + (qDoor * baseDoor) + installCost);
+    } 
+    else if (currentCategory === 'tapparelle') {
+      quoteTitle.innerText = "Stima Tapparelle in Alluminio:";
+      const mat = document.getElementById('tap-mat').value;
+      const motor = document.getElementById('tap-motor').value;
+      const qty = parseInt(document.getElementById('tap-qty').value, 10) || 0;
+      const hasBox = document.getElementById('tap-box').value === 'si';
+
+      let baseUnit = (mat === 'alu-hd') ? 130 : ((mat === 'alu-aria') ? 150 : 105);
+      if (motor === 'motore') baseUnit += 65;
+      if (motor === 'smart') baseUnit += 110;
+      if (hasBox) baseUnit += 45;
+
+      let installCost = isInstall ? (qty * 40) : 0;
+      total = Math.round((qty * baseUnit) + installCost);
+    } 
+    else if (currentCategory === 'zanzariere') {
+      quoteTitle.innerText = "Stima Zanzariere su Misura:";
+      const model = document.getElementById('zanz-model').value;
+      const color = document.getElementById('zanz-color').value;
+      const qWin = parseInt(document.getElementById('zanz-qty-win').value, 10) || 0;
+      const qDoor = parseInt(document.getElementById('zanz-qty-door').value, 10) || 0;
+
+      let baseW = (model === 'plissettata') ? 85 : ((model === 'rullo') ? 60 : 45);
+      let baseD = (model === 'plissettata') ? 140 : ((model === 'rullo') ? 110 : 80);
+
+      if (color === 'antracite') { baseW += 10; baseD += 15; }
+      if (color === 'legno') { baseW += 20; baseD += 30; }
+
+      let installCost = isInstall ? ((qWin + qDoor) * 25) : 0;
+      total = Math.round((qWin * baseW) + (qDoor * baseD) + installCost);
+    }
+
+    quoteVal.innerText = "€ " + total.toLocaleString('it-IT');
+    if (isInstall) {
+      quoteSub.innerText = "*Stima comprensiva di posa in opera e smontaggio vecchio serramento.";
+    } else {
+      quoteSub.innerText = "*Prezzo solo fornitura (senza montaggio). Consegna esclusa o da quantificare.";
+    }
+  }
+
+  function sendLeadToWhatsApp() {
+    const alertBox = document.getElementById('alert-error');
+    alertBox.style.display = 'none';
+
+    const name = document.getElementById('cust-name').value.trim();
+    const phone = document.getElementById('cust-phone').value.trim();
+    const city = document.getElementById('cust-city').value.trim();
+    const notes = document.getElementById('cust-notes').value.trim();
+    const gdpr = document.getElementById('cust-gdpr').checked;
+    const estimatedPrice = document.getElementById('quote-val').innerText;
+
+    if (!name || !phone) {
+      alertBox.innerText = "Per favore, compila il Nome e il Numero di Telefono/WhatsApp.";
+      alertBox.style.display = 'block';
+      return;
+    }
+
+    if (!gdpr) {
+      alertBox.innerText = "È necessario accettare il consenso GDPR per procedere.";
+      alertBox.style.display = 'block';
+      return;
+    }
+
+    let catLabel = "Infissi (Finestre & Porte-Finestre)";
+    let detailsSummary = "";
+
+    if (currentCategory === 'infissi') {
+      const mat = document.getElementById('inf-mat').selectedOptions[0].text;
+      const glass = document.getElementById('inf-glass').selectedOptions[0].text;
+      const qWin = document.getElementById('inf-qty-win').value;
+      const qDoor = document.getElementById('inf-qty-door').value;
+      detailsSummary = `*Materiale:* ${mat}\n*Vetri:* ${glass}\n*Quantità:* ${qWin} Finestre, ${qDoor} Porte-Finestre`;
+    } else if (currentCategory === 'tapparelle') {
+      catLabel = "Tapparelle in Alluminio";
+      const mat = document.getElementById('tap-mat').selectedOptions[0].text;
+      const motor = document.getElementById('tap-motor').selectedOptions[0].text;
+      const qty = document.getElementById('tap-qty').value;
+      detailsSummary = `*Profilo:* ${mat}\n*Manovra:* ${motor}\n*Quantità:* ${qty} Pezzi`;
+    } else if (currentCategory === 'zanzariere') {
+      catLabel = "Zanzariere su Misura";
+      const model = document.getElementById('zanz-model').selectedOptions[0].text;
+      const qWin = document.getElementById('zanz-qty-win').value;
+      const qDoor = document.getElementById('zanz-qty-door').value;
+      detailsSummary = `*Modello:* ${model}\n*Quantità:* ${qWin} Finestra, ${qDoor} Balcone/Porta`;
+    }
+
+    const installService = document.getElementById('srv-install').selectedOptions[0].text;
+
+    let message = `*RICHIESTA PREVENTIVO DAL SITO WEB*\n\n` +
+      `👤 *Cliente:* ${name}\n` +
+      `📞 *Telefono:* ${phone}\n` +
+      `📍 *Zona/Città:* ${city || 'Non specificato'}\n` +
+      `🏷️ *Categoria:* ${catLabel}\n` +
+      `${detailsSummary}\n` +
+      `🚚 *Modalità:* ${installService}\n` +
+      `💶 *Stima Online:* ${estimatedPrice}\n`;
+
+    if (notes) {
+      message += `📝 *Note/Misure:* ${notes}\n`;
+    }
+    message += `\n_Consenso GDPR confermato dal modulo web._`;
+
+    // Redirecționare directă pe WhatsApp (număr activ setat)
+    const waLink = "https://api.whatsapp.com/send?phone=" + COMPANY_PHONE + "&text=" + encodeURIComponent(message);
+    window.location.href = waLink;
+  }
+
+  calcEstimate();
+</script>
+
+</body>
+</html>
